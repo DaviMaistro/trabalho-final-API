@@ -7,8 +7,6 @@
 * SQLite3
 * JSON Web Token (JWT)
 
----
-
 ## Funcionalidades
 
 * Autenticação com JWT
@@ -17,43 +15,34 @@
 * Filtros por status
 * Ordenação de resultados
 * Paginação
-* Relacionamento entre usuários e tarefas (JOIN)
+* Relacionamento entre usuários e tarefas
 * Validações de dados
 * Status codes corretos
 * 20 registros iniciais no banco
 
----
-
 ## Estrutura do Projeto
 
 ```text
-/projeto
- ├── server.js
- ├── banco.db
- ├── package.json
- ├── README.md
- └── collection_postman.json
+server.js
+banco.db
+package.json
+README.md
+collection_postman.json
 ```
-
----
 
 ## Instalação
 
-Clone ou baixe o projeto.
-
-No terminal, dentro da pasta do projeto, execute:
+No terminal, dentro da pasta do projeto:
 
 ```bash
 npm install
 ```
 
-Ou instale manualmente:
+Ou:
 
 ```bash
 npm install express sqlite3 jsonwebtoken
 ```
-
----
 
 ## Como Executar
 
@@ -67,26 +56,22 @@ Servidor iniciado em:
 http://localhost:3000
 ```
 
----
-
-## Usuário Padrão para Login
+## Usuário Padrão
 
 ```text
 usuario: admin
 senha: 1234
 ```
 
----
-
 ## Banco de Dados
 
-O banco é criado automaticamente com nome:
+Arquivo:
 
 ```text
 banco.db
 ```
 
-Tabelas criadas:
+Tabelas:
 
 * usuarios
 * tarefas
@@ -96,54 +81,21 @@ Também são inseridos automaticamente:
 * 1 usuário padrão
 * 20 tarefas iniciais
 
----
-
-# Rotas da API
-
----
+## Rotas da API
 
 ## GET /
 
 Retorna mensagem inicial da API.
 
-### Exemplo:
-
-```json
-{
-  "mensagem": "API funcionando",
-  "status": "sucesso"
-}
-```
-
----
-
 ## GET /info
 
 Retorna informações do sistema.
-
-### Exemplo:
-
-```json
-{
-  "nome": "API REST CRUD SQLite",
-  "versao": "1.0.0",
-  "autor": "Davi"
-}
-```
-
----
 
 ## POST /login
 
 Realiza autenticação e retorna token JWT.
 
-### URL
-
-```text
-http://localhost:3000/login
-```
-
-### Body JSON
+Body JSON:
 
 ```json
 {
@@ -152,7 +104,7 @@ http://localhost:3000/login
 }
 ```
 
-### Resposta
+Resposta:
 
 ```json
 {
@@ -160,61 +112,25 @@ http://localhost:3000/login
 }
 ```
 
----
-
-# Rotas Protegidas
-
-Necessário enviar header:
+## Header para Rotas Protegidas
 
 ```text
 Authorization: Bearer SEU_TOKEN
 ```
 
----
-
 ## GET /tarefas
 
 Lista tarefas cadastradas.
-
-### URL
-
-```text
-http://localhost:3000/tarefas
-```
-
-### Exemplo de retorno
-
-```json
-[
-  {
-    "id": 1,
-    "titulo": "Tarefa 1",
-    "descricao": "Descrição 1",
-    "status": "pendente",
-    "usuario": "admin"
-  }
-]
-```
-
----
 
 ## GET /tarefas/:id
 
 Busca tarefa pelo ID.
 
-### Exemplo
-
-```text
-/tarefas/1
-```
-
----
-
 ## POST /tarefas
 
 Cria nova tarefa.
 
-### Body JSON
+Body JSON:
 
 ```json
 {
@@ -224,21 +140,11 @@ Cria nova tarefa.
 }
 ```
 
-### Resposta
-
-```json
-{
-  "mensagem": "Tarefa criada"
-}
-```
-
----
-
 ## PUT /tarefas/:id
 
 Atualiza tarefa existente.
 
-### Exemplo
+Body JSON:
 
 ```json
 {
@@ -246,33 +152,46 @@ Atualiza tarefa existente.
   "descricao": "Nova descrição",
   "status": "concluido"
 }
-
----
+```
 
 ## DELETE /tarefas/:id
 
 Remove tarefa pelo ID.
 
----
+## Filtros, Ordenação e Paginação
 
-# Filtros, Ordenação e Paginação
-
-## Paginação
+Paginação:
 
 ```text
 GET /tarefas?pagina=2
 ```
 
-## Ordenação
+Ordenação:
 
 ```text
 GET /tarefas?ordem=titulo
 ```
 
-## Filtro por status
+Filtro:
 
 ```text
 GET /tarefas?status=pendente
 ```
 
----
+## Status Codes
+
+
+## Testes no Postman
+
+Importar arquivo:
+
+```text
+collection_postman.json
+```
+
+Executar:
+
+1. POST /login
+2. Copiar token
+3. Testar rotas protegidas
+
