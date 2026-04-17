@@ -1,34 +1,22 @@
 # API REST - Gerenciador de Tarefas
 
 ## Tecnologias Utilizadas
-
-* Node.js
-* Express
-* SQLite3
-* JSON Web Token (JWT)
+Node.js
+Express
+SQLite3
+JSON Web Token (JWT)
 
 ## Funcionalidades
-
-* Autenticação com JWT
-* CRUD completo de tarefas
-* Banco de dados SQLite
-* Filtros por status
-* Ordenação de resultados
-* Paginação
-* Relacionamento entre usuários e tarefas
-* Validações de dados
-* Status codes corretos
-* 20 registros iniciais no banco
-
-## Estrutura do Projeto
-
-```text
-server.js
-banco.db
-package.json
-README.md
-collection_postman.json
-```
+Autenticação com JWT
+CRUD completo de tarefas
+Banco de dados SQLite
+Filtros por status
+Ordenação de resultados
+Paginação
+Relacionamento entre usuários e tarefas
+Validações de dados
+Status codes corretos
+20 registros iniciais no banco
 
 ## Instalação
 
@@ -72,14 +60,13 @@ banco.db
 ```
 
 Tabelas:
-
-* usuarios
-* tarefas
+usuarios
+tarefas
 
 Também são inseridos automaticamente:
 
-* 1 usuário padrão
-* 20 tarefas iniciais
+1 usuário padrão
+20 tarefas iniciais
 
 ## Rotas da API
 
