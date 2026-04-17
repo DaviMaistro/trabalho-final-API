@@ -1,0 +1,223 @@
+{
+  "info": {
+    "_postman_id": "1ad8f117-b893-4891-a5b9-045e16572146",
+    "name": "trabalho final",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53404017",
+    "_collection_link": "https://go.postman.co/collection/53404017-1ad8f117-b893-4891-a5b9-045e16572146?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET Inicial",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET Info",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/info",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "info"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"usuario\": \"admin\",\r\n  \"senha\": \"1234\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET Tarefas",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXN1YXJpbyI6ImFkbWluIiwiaWF0IjoxNzc2MzkyOTY3LCJleHAiOjE3NzYzOTY1Njd9.6EknbYvCRIkDK2-PWPS2pIP6z8BEFff5ffweI1BuNis",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/tarefas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tarefas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET Tarefa por ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXN1YXJpbyI6ImFkbWluIiwiaWF0IjoxNzc2MzkyOTY3LCJleHAiOjE3NzYzOTY1Njd9.6EknbYvCRIkDK2-PWPS2pIP6z8BEFff5ffweI1BuNis",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/tarefas/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tarefas",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Criar Tarefa",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXN1YXJpbyI6ImFkbWluIiwiaWF0IjoxNzc2MzkyOTY3LCJleHAiOjE3NzYzOTY1Njd9.6EknbYvCRIkDK2-PWPS2pIP6z8BEFff5ffweI1BuNis",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"titulo\": \"Estudar Node\",\r\n  \"descricao\": \"Projeto final\",\r\n  \"status\": \"andamento\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/tarefas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tarefas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PUT Atualizar",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXN1YXJpbyI6ImFkbWluIiwiaWF0IjoxNzc2MzkyOTY3LCJleHAiOjE3NzYzOTY1Njd9.6EknbYvCRIkDK2-PWPS2pIP6z8BEFff5ffweI1BuNis",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"titulo\": \"Tarefa Atualizada\",\r\n  \"descricao\": \"Nova descrição\",\r\n  \"status\": \"concluido\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/tarefas/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tarefas",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE Tarefa",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXN1YXJpbyI6ImFkbWluIiwiaWF0IjoxNzc2MzkyOTY3LCJleHAiOjE3NzYzOTY1Njd9.6EknbYvCRIkDK2-PWPS2pIP6z8BEFff5ffweI1BuNis",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/tarefas/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "tarefas",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
